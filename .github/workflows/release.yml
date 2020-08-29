@@ -27,5 +27,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           semantic-release version
           semantic-release changelog --post
-          git push --follow-tags
+          tag=$(git describe --tags --exact-match HEAD)
+          git push
+          git push origin ${tag}
           
