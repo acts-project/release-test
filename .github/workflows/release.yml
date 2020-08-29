@@ -26,8 +26,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           semantic-release version
-          semantic-release changelog --post
           tag=$(git describe --tags --exact-match HEAD)
           git push
-          # git push origin ${tag}
+          git push origin ${tag}
+          semantic-release changelog --post
           
